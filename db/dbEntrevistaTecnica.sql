@@ -1,4 +1,4 @@
-
+drop database if exists entrevistaTecnica;
 create database entrevistaTecnica;
 use entrevistaTecnica;
 
@@ -26,7 +26,7 @@ surname varchar(250)
 
 CREATE TABLE skill(
  id bigint primary key auto_increment,
- nameSkill varchar(255)
+ skillName varchar(255)
 );
 
 create table candidateSkill(
@@ -34,7 +34,7 @@ id bigint primary key auto_increment,
 idCandidate bigint,
 idSkill bigint,
 notes varchar(250),
-valueSkill float,
+skillValue float,
 foreign key(idCandidate)
 references candidate(id)
 on delete cascade
@@ -70,11 +70,11 @@ insert into positions (title, dateCreation, descriptionPosition)values('Programa
 insert into positions (title, dateCreation, descriptionPosition)values('Programador Python Junior', now(), 'Puesto estable!!!');
 insert into positions (title, dateCreation, descriptionPosition)values('Programador C# Junior', now(), 'Puesto INestable!!!');
 
-INSERT INTO skill(nameSkill)VALUES('SQL');
-INSERT INTO skill(nameSkill)VALUES('JAVA');
-INSERT INTO skill(nameSkill)VALUES('PHP');
-INSERT INTO skill(nameSkill)VALUES('HTML');
-INSERT INTO skill(nameSkill)VALUES('CSS');
+INSERT INTO skill(skillName)VALUES('SQL');
+INSERT INTO skill(skillName)VALUES('JAVA');
+INSERT INTO skill(skillName)VALUES('PHP');
+INSERT INTO skill(skillName)VALUES('HTML');
+INSERT INTO skill(skillName)VALUES('CSS');
 
 insert into companyUser(username, pwd, userRole) values('neo', '123asdasjd', 'expert');
 insert into companyUser(username, pwd, userRole) values('trinity', '123ajsdasd', 'HR user');
@@ -94,11 +94,11 @@ insert into candidatePosition(idCandidate, idPosition, registryDate, testDate, c
 insert into candidatePosition(idCandidate, idPosition, registryDate, testDate, completionDate, result) values(1, 1, now(), now(), now(), 7.4);
 insert into candidatePosition(idCandidate, idPosition, registryDate, testDate, completionDate, result) values(1, 4, now(), now(), now(), 8.4);
 
-insert into candidateSkill(idCandidate, idSkill, notes, valueSkill) values(2, 5, 'high skill', 7.7);
-insert into candidateSkill(idCandidate, idSkill, notes, valueSkill) values(4, 2, 'low skill', 4.7);
-insert into candidateSkill(idCandidate, idSkill, notes, valueSkill) values(2, 2, 'mid skill', 5.7);
-insert into candidateSkill(idCandidate, idSkill, notes, valueSkill) values(2, 3, 'over skill', 3.7);
-insert into candidateSkill(idCandidate, idSkill, notes, valueSkill) values(1, 2, 'no skill', 8.7);
+insert into candidateSkill(idCandidate, idSkill, notes, skillValue) values(2, 5, 'high skill', 7.7);
+insert into candidateSkill(idCandidate, idSkill, notes, skillValue) values(4, 2, 'low skill', 4.7);
+insert into candidateSkill(idCandidate, idSkill, notes, skillValue) values(2, 2, 'mid skill', 5.7);
+insert into candidateSkill(idCandidate, idSkill, notes, skillValue) values(2, 3, 'over skill', 3.7);
+insert into candidateSkill(idCandidate, idSkill, notes, skillValue) values(1, 2, 'no skill', 8.7);
 
 
 
