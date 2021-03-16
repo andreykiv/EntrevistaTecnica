@@ -22,7 +22,7 @@ public class Candidate {
 	private int id;
 	private String username;
 	private String pwd;
-	private String name;
+	private String namecandidate;
 	private String surname;
 	
 	@OneToMany
@@ -35,13 +35,13 @@ public class Candidate {
 		super();
 	}
 
-	public Candidate(int id, String username, String pwd, String name, String surname,
+	public Candidate(int id, String username, String pwd, String namecandidate, String surname,
 			List<CandidatePosition> candidatePositions) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.pwd = pwd;
-		this.name = name;
+		this.namecandidate = namecandidate;
 		this.surname = surname;
 		this.candidatePositions = candidatePositions;
 	}
@@ -71,12 +71,12 @@ public class Candidate {
 		this.pwd = pwd;
 	}
 
-	public String getName() {
-		return name;
+	public String getNamecandidate() {
+		return namecandidate;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNamecandidate(String name) {
+		this.namecandidate = name;
 	}
 
 	public String getSurname() {
@@ -99,7 +99,7 @@ public class Candidate {
 
 	@Override
 	public String toString() {
-		return "Candidate [id=" + id + ", username=" + username + ", pwd=" + pwd + ", name=" + name + ", surname="
+		return "Candidate [id=" + id + ", username=" + username + ", pwd=" + pwd + ", namecandidate=" + namecandidate + ", surname="
 				+ surname + ", candidatePositions=" + candidatePositions + "]";
 	}
 	

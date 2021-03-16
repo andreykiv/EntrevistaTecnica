@@ -2,6 +2,7 @@ package entrevista_tecnica.dto;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,23 +13,29 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="candidatePosition")//en caso que la tabala sea diferente
+@Table(name="candidateposition")//en caso que la tabala sea diferente
 public class CandidatePosition {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//busca ultimo valor e incrementa desde id final de db
 	private int id;
 	
 	@ManyToOne
-    @JoinColumn(name = "idCandidate")
+    @JoinColumn(name = "idcandidate")
 	Candidate candidate;
 	
 	@ManyToOne
-    @JoinColumn(name = "idPosition")
+    @JoinColumn(name = "idposition")
 	Positions position;
 	
+	@Column(name = "registrydate")//no hace falta si se llama igual
 	private Timestamp registryDate;
+	
+	@Column(name = "testdate")//no hace falta si se llama igual
 	private Timestamp testDate;
+	
+	@Column(name = "completiondate")//no hace falta si se llama igual
 	private Timestamp completionDate;
+	
 	private float result;
 	
 	//CONSTRUCTORES

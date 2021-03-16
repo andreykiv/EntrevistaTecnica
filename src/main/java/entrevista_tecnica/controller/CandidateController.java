@@ -57,7 +57,7 @@ public class CandidateController {
 		
 		Candidate_seleccionado.setUsername(candidate.getUsername());
 		Candidate_seleccionado.setPwd(candidate.getPwd());
-		Candidate_seleccionado.setName(candidate.getName());
+		Candidate_seleccionado.setNamecandidate(candidate.getNamecandidate());
 		Candidate_seleccionado.setSurname(candidate.getSurname());
 		
 		Candidate_actualizado = candidateServiceImpl.actualizarCandidate(Candidate_seleccionado);

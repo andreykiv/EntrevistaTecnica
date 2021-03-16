@@ -2,6 +2,7 @@ package entrevista_tecnica.dto;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,6 +22,7 @@ public class Skill {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//busca ultimo valor e incrementa desde id final de db
 	private int id;
 	
+	@Column(name = "skillname")//no hace falta si se llama igual
 	private String skillName;
 	
 	@OneToMany

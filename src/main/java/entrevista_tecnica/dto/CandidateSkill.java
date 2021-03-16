@@ -1,5 +1,6 @@
 package entrevista_tecnica.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="candidateSkill")//en caso que la tabala sea diferente
+@Table(name="candidateskill")//en caso que la tabala sea diferente
 public class CandidateSkill {
 	
 	//ATRIBUTOS
@@ -18,14 +19,16 @@ public class CandidateSkill {
 	private int id;
 	
 	@ManyToOne
-    @JoinColumn(name = "idCandidate")
+    @JoinColumn(name = "idcandidate")
 	Candidate candidate;
 	
 	@ManyToOne
-    @JoinColumn(name = "idSkill")
+    @JoinColumn(name = "idskill")
 	Skill skill;
 	
 	private String notes;
+	
+	@Column(name = "skillvalue")//no hace falta si se llama igual
 	private float skillValue;
 	
 	//CONSTRUCTORS

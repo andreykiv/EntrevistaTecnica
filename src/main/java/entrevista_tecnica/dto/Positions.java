@@ -3,6 +3,7 @@ package entrevista_tecnica.dto;
 import java.sql.Timestamp;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -23,7 +24,11 @@ public class Positions {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//busca ultimo valor e incrementa desde id final de db
 	private int id;
 	private String title;
+	
+	@Column(name = "datecreation")//no hace falta si se llama igual
 	private Timestamp dateCreation;
+	
+	@Column(name = "descriptionposition")//no hace falta si se llama igual
 	private String description;
 	
 	@OneToMany
