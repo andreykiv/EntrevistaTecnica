@@ -1,13 +1,13 @@
 package entrevista_tecnica.dto;
 
-import java.util.List;
+import java.sql.Timestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -18,7 +18,112 @@ public class CandidatePosition {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//busca ultimo valor e incrementa desde id final de db
 	private int id;
 	
-	@OneToMany
-    @JoinColumn(name="id")
-    private List<Positions> positions;
+	@ManyToOne
+    @JoinColumn(name = "idCandidate")
+	Candidate candidate;
+	
+	@ManyToOne
+    @JoinColumn(name = "idPosition")
+	Positions position;
+	
+	private Timestamp registryDate;
+	private Timestamp testDate;
+	private Timestamp completionDate;
+	private float result;
+	
+	//CONSTRUCTORES
+	public CandidatePosition() {
+		super();
+	}
+
+
+	public CandidatePosition(int id, Candidate candidate, Positions position, Timestamp registryDate,
+			Timestamp testDate, Timestamp completionDate, float result) {
+		super();
+		this.id = id;
+		this.candidate = candidate;
+		this.position = position;
+		this.registryDate = registryDate;
+		this.testDate = testDate;
+		this.completionDate = completionDate;
+		this.result = result;
+	}
+
+	//GETTERS Y SETTERS
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public Candidate getCandidate() {
+		return candidate;
+	}
+
+
+	public void setCandidate(Candidate candidate) {
+		this.candidate = candidate;
+	}
+
+
+	public Positions getPosition() {
+		return position;
+	}
+
+
+	public void setPosition(Positions position) {
+		this.position = position;
+	}
+
+
+	public Timestamp getRegistryDate() {
+		return registryDate;
+	}
+
+
+	public void setRegistryDate(Timestamp registryDate) {
+		this.registryDate = registryDate;
+	}
+
+
+	public Timestamp getTestDate() {
+		return testDate;
+	}
+
+
+	public void setTestDate(Timestamp testDate) {
+		this.testDate = testDate;
+	}
+
+
+	public Timestamp getCompletionDate() {
+		return completionDate;
+	}
+
+
+	public void setCompletionDate(Timestamp completionDate) {
+		this.completionDate = completionDate;
+	}
+
+
+	public float getResult() {
+		return result;
+	}
+
+
+	public void setResult(float result) {
+		this.result = result;
+	}
+
+
+	@Override
+	public String toString() {
+		return "CandidatePosition [id=" + id + ", candidate=" + candidate + ", position=" + position + ", registryDate="
+				+ registryDate + ", testDate=" + testDate + ", completionDate=" + completionDate + ", result=" + result
+				+ "]";
+	}
 }
