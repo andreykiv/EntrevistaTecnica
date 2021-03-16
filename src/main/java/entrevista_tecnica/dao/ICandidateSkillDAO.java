@@ -1,16 +1,5 @@
 package entrevista_tecnica.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+public interface ICandidateSkillDAO {
 
-import entrevista_tecnica.dto.CandidateSkill;
-
-
-	public interface ICandidateSkillDAO extends JpaRepository<CandidateSkill, Integer>{
-	    
-	}	
-	
-	
-	
-	
-	
-
+}
