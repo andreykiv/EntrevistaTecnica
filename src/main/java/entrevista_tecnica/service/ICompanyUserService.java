@@ -10,7 +10,7 @@ public interface ICompanyUserService {
 	
 	public CompanyUser guardarCompanyUser(CompanyUser companyUser);	//Guarda un CompanyUser CREATE
 	
-	public CompanyUser CompanyUserXID(int id); //Leer datos de un CompanyUser READ
+	public CompanyUser companyUserXID(int id); //Leer datos de un CompanyUser READ
 	
 	public CompanyUser actualizarCompanyUser(CompanyUser companyUser); //Actualiza datos del CompanyUser UPDATE
 	

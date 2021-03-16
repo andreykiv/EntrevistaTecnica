@@ -24,7 +24,7 @@ public class CompanyUserServiceImpl implements ICompanyUserService{
 	}
 
 	@Override
-	public CompanyUser CompanyUserXID(int id) {
+	public CompanyUser companyUserXID(int id) {
 		return iCompanyUserDAO.findById(id).get();
 	}
 
