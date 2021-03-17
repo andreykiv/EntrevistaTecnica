@@ -29,14 +29,19 @@ public class Candidate {
     @JoinColumn(name="id")
     private List<CandidatePosition> candidatePositions;
 	
+	@OneToMany
+    @JoinColumn(name="id")
+    private List<CandidateSkill> candidateSkill;
+	
 	
 	//CONSTRUCTORES
 	public Candidate() {
 		super();
 	}
 
+	
 	public Candidate(int id, String username, String pwd, String namecandidate, String surname,
-			List<CandidatePosition> candidatePositions) {
+			List<CandidatePosition> candidatePositions, List<CandidateSkill> candidateSkill) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -44,8 +49,11 @@ public class Candidate {
 		this.namecandidate = namecandidate;
 		this.surname = surname;
 		this.candidatePositions = candidatePositions;
+		this.candidateSkill = candidateSkill;
 	}
-	
+
+
+
 	//GETTERS Y SETTERS
 	public int getId() {
 		return id;
@@ -96,6 +104,18 @@ public class Candidate {
 	public void setCandidatePositions(List<CandidatePosition> candidatePositions) {
 		this.candidatePositions = candidatePositions;
 	}
+	
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "CandidateSkill")
+	public List<CandidateSkill> getCandidateSkill() {
+		return candidateSkill;
+	}
+
+
+	public void setCandidateSkill(List<CandidateSkill> candidateSkill) {
+		this.candidateSkill = candidateSkill;
+	}
+
 
 	@Override
 	public String toString() {
