@@ -96,7 +96,7 @@ public class Positions {
 	@Override
 	public String toString() {
 		return "Positions [id=" + id + ", title=" + title + ", dateCreation=" + dateCreation + ", description="
-				+ description + ", candidatePositions=" + candidatePositions + "]";
+				+ description + "]";
 	}
 	
 }

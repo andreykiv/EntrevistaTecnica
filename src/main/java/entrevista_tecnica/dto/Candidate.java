@@ -100,7 +100,7 @@ public class Candidate {
 	@Override
 	public String toString() {
 		return "Candidate [id=" + id + ", username=" + username + ", pwd=" + pwd + ", namecandidate=" + namecandidate + ", surname="
-				+ surname + ", candidatePositions=" + candidatePositions + "]";
+				+ surname + "]";
 	}
 	
 }
