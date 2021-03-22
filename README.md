@@ -87,7 +87,7 @@ Google
 Mi familia 
 Aragon en el retorno del rey por llegar con los espíritus en barco.
 
-#### 3. Link a un demo con el proyecto desplegado: https://github.com/andreykiv/PalabraOculta
+#### 3. Link a un demo con el proyecto desplegado: https://github.com/andreykiv/EntrevistaTecnica
 
 
 #### 4. Lista con los pasos mínimos que se necesitan para clonar exitosamente el proyecto y echarlo a andar en local.
