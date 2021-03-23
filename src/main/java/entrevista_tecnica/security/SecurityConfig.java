@@ -1,5 +1,8 @@
 package entrevista_tecnica.security;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -16,7 +19,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests()
+        http.cors().and().csrf().disable().authorizeRequests()
             .antMatchers("/login").permitAll() //permitimos el acceso a /login a cualquiera
             .anyRequest().authenticated() //cualquier otra peticion requiere autenticacion
             .and()
@@ -44,11 +47,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
        
     }
    
-   	//IMPLEMENTAMOS  CORS POLICY PARA TODAS LAS RUTAS y METODOS?
+   	//IMPLEMENTAMOS  CORS POLICY PARA TODAS LAS RUTAS y METODOS SELECCIONADOS
 	@Bean
 	CorsConfigurationSource corsConfigurationSource() {
 		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+		
+		List<String> allowedMethods = new ArrayList<String>();
+		allowedMethods.add("DELETE");
+		allowedMethods.add("PUT");
+		allowedMethods.add("GET");
+		allowedMethods.add("POST");
+		
+		CorsConfiguration myCorsConfiguration = new CorsConfiguration();
+		myCorsConfiguration.applyPermitDefaultValues().setAllowedMethods(allowedMethods);;
+		
+		source.registerCorsConfiguration("/**", new CorsConfiguration().combine(myCorsConfiguration));
 		return source;
 	}
 }

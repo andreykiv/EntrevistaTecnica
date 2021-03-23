@@ -2,14 +2,16 @@ package entrevista_tecnica.dto;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -25,12 +27,10 @@ public class Candidate {
 	private String namecandidate;
 	private String surname;
 	
-	@OneToMany
-    @JoinColumn(name="id")
+	@OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
     private List<CandidatePosition> candidatePositions;
 	
-	@OneToMany
-    @JoinColumn(name="id")
+	@OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
     private List<CandidateSkill> candidateSkill;
 	
 	
@@ -96,7 +96,7 @@ public class Candidate {
 	}
 	
 	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "CandidatePosition")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "CandidatePosition", orphanRemoval=true)
 	public List<CandidatePosition> getCandidatePositions() {
 		return candidatePositions;
 	}
@@ -106,7 +106,7 @@ public class Candidate {
 	}
 	
 	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "CandidateSkill")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "CandidateSkill", orphanRemoval=true)
 	public List<CandidateSkill> getCandidateSkill() {
 		return candidateSkill;
 	}
