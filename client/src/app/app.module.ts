@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotComponent } from './login/forgot/forgot.component';
+import { ListCandidateComponent } from './candidate/list-candidate/list-candidate.component';
+import { UpdateCandidateComponent } from './candidate/update-candidate/update-candidate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ForgotComponent
+    ForgotComponent,
+    ListCandidateComponent,
+    UpdateCandidateComponent
   ],
   imports: [
     BrowserModule,
