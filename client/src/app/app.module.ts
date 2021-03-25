@@ -19,6 +19,7 @@ import { ForgotComponent } from './Login/forgot/forgot.component';
 import { RegisterComponent } from './Login/register/register.component';
 import { HomeComponent } from './Home/home/home.component';
 import { ListAppliedJobComponent } from './Job/list-applied-job/list-applied-job.component';
+import { DeleteModalComponent } from './Home/delete-modal/delete-modal.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ListAppliedJobComponent } from './Job/list-applied-job/list-applied-job
     ForgotComponent,
     RegisterComponent,
     HomeComponent,
-    ListAppliedJobComponent
+    ListAppliedJobComponent,
+    DeleteModalComponent
   ],
   imports: [
     BrowserModule,

@@ -44,7 +44,19 @@
                                 <td>System Architect</td>
                                 <td>Edinburgh</td>
                                 <td>61</td>
-                                <td>2011/04/25</td>
+                                <td class="d-flex justify-content-between">
+                                  <div>
+                                    <button title="Hacer test" class="btn btn-warning">
+                                      <i class="fas fa-pencil-alt"></i>
+                                    </button>
+                                    <button title="+ Info"  class="getSpace btn btn-primary">
+                                      <i class="fas fa-info"></i>
+                                    </button>
+                                  </div>
+                                  <button title="Eliminar" data-toggle="modal" data-target="#deleteModalLabel" class="btn btn-danger">
+                                    <i class="fas fa-exclamation"></i>
+                                  </button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Garrett Winters</td>
@@ -455,6 +467,7 @@
   <!-- End of Content Wrapper -->
 
   <app-logout></app-logout>
+  <app-delete-modal></app-delete-modal>
 
 </div>
 <!-- End of Page Wrapper -->
