@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './Login/login/login.component';
 import { MainComponent } from './Main/main/main.component';
 import { ListSkillComponent } from './Skill/list-skill/list-skill.component';
-import { CreateSkillComponent } from './Skill/create-skill/create-skill.component';
 import { CandidateComponent } from './Candidate/candidate/candidate.component';
 import { ListCandidateComponent } from './Candidate/list-candidate/list-candidate.component';
 import { ListJobComponent } from './Job/list-job/list-job.component';
@@ -20,6 +19,7 @@ import { RegisterComponent } from './Login/register/register.component';
 import { HomeComponent } from './Home/home/home.component';
 import { ListAppliedJobComponent } from './Job/list-applied-job/list-applied-job.component';
 import { DeleteModalComponent } from './Home/delete-modal/delete-modal.component';
+import { CreateSkillComponent } from './Modal/create-skill/create-skill.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,6 @@ import { DeleteModalComponent } from './Home/delete-modal/delete-modal.component
     LoginComponent,
     MainComponent,
     ListSkillComponent,
-    CreateSkillComponent,
     CandidateComponent,
     ListCandidateComponent,
     ListJobComponent,
@@ -40,7 +39,8 @@ import { DeleteModalComponent } from './Home/delete-modal/delete-modal.component
     RegisterComponent,
     HomeComponent,
     ListAppliedJobComponent,
-    DeleteModalComponent
+    DeleteModalComponent,
+    CreateSkillComponent
   ],
   imports: [
     BrowserModule,

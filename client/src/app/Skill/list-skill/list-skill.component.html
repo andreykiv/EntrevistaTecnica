@@ -44,7 +44,19 @@
                                 <td>System Architect</td>
                                 <td>Edinburgh</td>
                                 <td>61</td>
-                                <td>2011/04/25</td>
+                                <td class="d-flex justify-content-between">
+                                  <div>
+                                    <button title="Crear nueva habilidad" data-toggle="modal" data-target="#createModalSkill" class="btn btn-success">
+                                      <i class="fas fa-plus"></i>
+                                    </button>
+                                    <button title="Modificar"  class="getSpace btn btn-warning">
+                                      <i class="fas fa-undo-alt"></i>
+                                    </button>
+                                  </div>
+                                  <button title="Eliminar" data-toggle="modal" data-target="#deleteModalCandidatura" class="btn btn-danger">
+                                    <i class="fas fa-exclamation"></i>
+                                  </button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Garrett Winters</td>
@@ -456,6 +468,8 @@
   <!-- End of Content Wrapper -->
 
   <app-logout></app-logout>
+  <app-delete-modal></app-delete-modal>
+  <app-create-skill></app-create-skill>
 
 </div>
 <!-- End of Page Wrapper -->

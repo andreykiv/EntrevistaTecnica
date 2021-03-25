@@ -9,7 +9,6 @@ import { ForgotComponent } from './Login/forgot/forgot.component';
 import { LoginComponent } from './Login/login/login.component';
 import { RegisterComponent } from './Login/register/register.component';
 import { MainComponent } from './Main/main/main.component';
-import { CreateSkillComponent } from './Skill/create-skill/create-skill.component';
 import { ListSkillComponent } from './Skill/list-skill/list-skill.component';
 
 const routes: Routes = [
@@ -20,7 +19,6 @@ const routes: Routes = [
   {path: 'home', component:MainComponent},
   {path: 'main', component:HomeComponent},
   {path: 'skill/list-skill', component: ListSkillComponent},
-  {path: 'skill/create-skill', component:CreateSkillComponent},
   {path: 'candidate/list-candidate', component:CandidateComponent},
   {path: 'job/list-job', component:ListJobComponent},
   {path: 'job/create-job', component:CreateJobComponent},
