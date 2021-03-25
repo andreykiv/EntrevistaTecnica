@@ -17,6 +17,8 @@ import { FooterComponent } from './Home/footer/footer.component';
 import { LogoutComponent } from './Home/logout/logout.component';
 import { ForgotComponent } from './Login/forgot/forgot.component';
 import { RegisterComponent } from './Login/register/register.component';
+import { HomeComponent } from './Home/home/home.component';
+import { ListAppliedJobComponent } from './Job/list-applied-job/list-applied-job.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { RegisterComponent } from './Login/register/register.component';
     FooterComponent,
     LogoutComponent,
     ForgotComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent,
+    ListAppliedJobComponent
   ],
   imports: [
     BrowserModule,
