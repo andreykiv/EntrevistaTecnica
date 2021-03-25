@@ -1,21 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CandidateComponent } from './Candidate/candidate/candidate.component';
-import { HomeComponent } from './Home/home/home.component';
 import { CreateJobComponent } from './Job/create-job/create-job.component';
-import { JobComponent } from './Job/job/job.component';
+import { ListJobComponent } from './Job/list-job/list-job.component';
+import { ForgotComponent } from './Login/forgot/forgot.component';
 import { LoginComponent } from './Login/login/login.component';
+import { RegisterComponent } from './Login/register/register.component';
+import { MainComponent } from './Main/main/main.component';
 import { CreateSkillComponent } from './Skill/create-skill/create-skill.component';
-import { SkillComponent } from './Skill/skill/skill.component';
+import { ListSkillComponent } from './Skill/list-skill/list-skill.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'login'},
   {path: 'login', component:LoginComponent},
-  {path: 'home', component:HomeComponent},
-  {path: 'skill/list-skill', component:SkillComponent},
+  {path: 'register', component:RegisterComponent},
+  {path: 'forgot', component:ForgotComponent},
+  {path: 'home', component:MainComponent},
+  {path: 'skill/list-skill', component: ListSkillComponent},
   {path: 'skill/create-skill', component:CreateSkillComponent},
   {path: 'candidate/list-candidate', component:CandidateComponent},
-  {path: 'job/list-job', component:JobComponent},
+  {path: 'job/list-job', component:ListJobComponent},
   {path: 'job/create-job', component:CreateJobComponent},
 ];
 
