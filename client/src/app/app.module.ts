@@ -9,7 +9,6 @@ import { ListSkillComponent } from './Skill/list-skill/list-skill.component';
 import { CandidateComponent } from './Candidate/candidate/candidate.component';
 import { ListCandidateComponent } from './Candidate/list-candidate/list-candidate.component';
 import { ListJobComponent } from './Job/list-job/list-job.component';
-import { CreateJobComponent } from './Job/create-job/create-job.component';
 import { SidebarComponent } from './Home/sidebar/sidebar.component';
 import { TopbarComponent } from './Home/topbar/topbar.component';
 import { FooterComponent } from './Home/footer/footer.component';
@@ -20,6 +19,9 @@ import { HomeComponent } from './Home/home/home.component';
 import { ListAppliedJobComponent } from './Job/list-applied-job/list-applied-job.component';
 import { DeleteModalComponent } from './Home/delete-modal/delete-modal.component';
 import { CreateSkillComponent } from './Modal/create-skill/create-skill.component';
+import { CreateJobComponent } from './Modal/create-job/create-job.component';
+import { DeleteJobModalComponent } from './Modal/delete-job-modal/delete-job-modal.component';
+import { DeleteCandidateModalComponent } from './Modal/delete-candidate-modal/delete-candidate-modal.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,6 @@ import { CreateSkillComponent } from './Modal/create-skill/create-skill.componen
     CandidateComponent,
     ListCandidateComponent,
     ListJobComponent,
-    CreateJobComponent,
     SidebarComponent,
     TopbarComponent,
     FooterComponent,
@@ -40,7 +41,10 @@ import { CreateSkillComponent } from './Modal/create-skill/create-skill.componen
     HomeComponent,
     ListAppliedJobComponent,
     DeleteModalComponent,
-    CreateSkillComponent
+    CreateSkillComponent,
+    CreateJobComponent,
+    DeleteJobModalComponent,
+    DeleteCandidateModalComponent,
   ],
   imports: [
     BrowserModule,
