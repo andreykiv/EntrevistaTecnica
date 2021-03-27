@@ -11,19 +11,25 @@
         <app-topbar></app-topbar>
         <!-- Main content -->
 
-        <div class="row registrarHab">
+        <div class="row">
           <div class="col-lg-4"></div>
           <div class="col-lg-4">
-              <h4>Modificar habilidad</h4>
+              <h4>Registrar nueva Oferta Laboral</h4>
               <br>
+              <div [hidden]="submitted">
                 <form (ngSubmit)="onSubmit()" class="user">
                   <div class="form-group">
-                    <label for="name">Nombre habilidad</label>
-                      <input type="text" required [(ngModel)]="skill.skillName" name="skillName" class="form-control form-control-user"
-                         aria-describedby="skillName">
+                    <label for="jobBody">Título</label>
+                      <input type="text" required [(ngModel)]="positions.title" name="title" class="form-control form-control-user"
+                          placeholder="Título oferta...">
                   </div>
-                    <button type="submit" class="btn-primary btn-user btn-block" >Modificar</button>
+                  <div class="form-group">
+                      <label for="jobBody">Descripción</label>
+                      <textarea class="form-control" required [(ngModel)]="positions.description" name="description" rows="5"></textarea>
+                  </div>
+                    <button type="submit" class="btn-primary btn-user btn-block" >Registrar</button>
                 </form>
+              </div>
           </div>
           <div class="col-lg-4"></div>
         </div>
@@ -37,6 +43,5 @@
 
   <app-logout></app-logout>
   <app-delete-modal></app-delete-modal>
-
 
 </div>

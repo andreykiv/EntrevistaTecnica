@@ -14,13 +14,17 @@
         <div class="row registrarHab">
           <div class="col-lg-4"></div>
           <div class="col-lg-4">
-              <h4>Modificar habilidad</h4>
+              <h4>Modificar Oferta</h4>
               <br>
                 <form (ngSubmit)="onSubmit()" class="user">
                   <div class="form-group">
-                    <label for="name">Nombre habilidad</label>
-                      <input type="text" required [(ngModel)]="skill.skillName" name="skillName" class="form-control form-control-user"
-                         aria-describedby="skillName">
+                    <label for="name">Título oferta</label>
+                      <input type="text" required [(ngModel)]="positions.title" name="title" class="form-control form-control-user"
+                        >
+                  </div>
+                  <div class="form-group">
+                    <label for="jobBody">Descripción</label>
+                    <textarea class="form-control" required [(ngModel)]="positions.description" name="description" rows="5"></textarea>
                   </div>
                     <button type="submit" class="btn-primary btn-user btn-block" >Modificar</button>
                 </form>
@@ -28,7 +32,6 @@
           <div class="col-lg-4"></div>
         </div>
         <!-- Main content -->
-        <!-- <app-footer></app-footer> -->
       </div>
       <!-- End of Main Content -->
 
@@ -37,6 +40,5 @@
 
   <app-logout></app-logout>
   <app-delete-modal></app-delete-modal>
-
 
 </div>

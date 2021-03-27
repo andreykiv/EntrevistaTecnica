@@ -33,10 +33,6 @@ export class ListSkillComponent implements OnInit {
         error => console.log(error));
   }
 
-  skillDetails(id: number){
-    this.router.navigate(['details', id]);
-  }
-
   updateSkill(id: number){
     this.router.navigate(['skill/update', id]);
   }

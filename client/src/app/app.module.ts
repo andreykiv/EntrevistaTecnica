@@ -19,13 +19,14 @@ import { LogoutComponent } from './Home/logout/logout.component';
 import { ForgotComponent } from './Login/forgot/forgot.component';
 import { RegisterComponent } from './Login/register/register.component';
 import { HomeComponent } from './Home/home/home.component';
+import { CreateJobComponent } from './Job/create-job/create-job.component';
 import { ListAppliedJobComponent } from './Job/list-applied-job/list-applied-job.component';
-import { CreateJobComponent } from './Modal/create-job/create-job.component';
-import { DeleteJobModalComponent } from './Modal/delete-job-modal/delete-job-modal.component';
 import { DeleteCandidateModalComponent } from './Modal/delete-candidate-modal/delete-candidate-modal.component';
 import { UpdateSkillComponent } from './Skill/update-skill/update-skill.component';
 import { DeleteModalComponent } from './Modal/delete-modal/delete-modal.component';
 import { CreateSkillComponent } from './Skill/create-skill/create-skill.component';
+import { UpdateJobComponent } from './Job/update-job/update-job.component';
+import { DetailsJobComponent } from './Job/details-job/details-job.component';
 
 
 @NgModule({
@@ -46,11 +47,12 @@ import { CreateSkillComponent } from './Skill/create-skill/create-skill.componen
     HomeComponent,
     ListAppliedJobComponent,
     CreateJobComponent,
-    DeleteJobModalComponent,
     DeleteCandidateModalComponent,
     UpdateSkillComponent,
     DeleteModalComponent,
-    CreateSkillComponent
+    CreateSkillComponent,
+    UpdateJobComponent,
+    DetailsJobComponent
   ],
   imports: [
     BrowserModule,

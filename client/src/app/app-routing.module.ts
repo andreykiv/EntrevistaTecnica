@@ -2,8 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CandidateComponent } from './Candidate/candidate/candidate.component';
 import { HomeComponent } from './Home/home/home.component';
+import { CreateJobComponent } from './Job/create-job/create-job.component';
+import { DetailsJobComponent } from './Job/details-job/details-job.component';
 import { ListAppliedJobComponent } from './Job/list-applied-job/list-applied-job.component';
 import { ListJobComponent } from './Job/list-job/list-job.component';
+import { UpdateJobComponent } from './Job/update-job/update-job.component';
 import { ForgotComponent } from './Login/forgot/forgot.component';
 import { LoginComponent } from './Login/login/login.component';
 import { RegisterComponent } from './Login/register/register.component';
@@ -23,6 +26,9 @@ const routes: Routes = [
   {path: 'skill/list-skill/add', component: CreateSkillComponent},
   {path: 'candidate/list-candidate', component:CandidateComponent},
   {path: 'job/list-job', component:ListJobComponent},
+  {path: 'job/list-job/add', component: CreateJobComponent},
+  {path: 'job/update/:id', component: UpdateJobComponent},
+  {path: 'job/details/:id', component:DetailsJobComponent},
   {path: 'job/list-applied-job', component:ListAppliedJobComponent},
   {path: '', pathMatch: 'full', redirectTo: 'login'},
 ];

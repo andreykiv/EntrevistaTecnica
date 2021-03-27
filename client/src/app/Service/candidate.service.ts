@@ -15,29 +15,29 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class SkillService {
+export class CandidateService {
 
-  private baseUrl = 'http://localhost:8181/api/skill';
+  private baseUrl = 'http://localhost:8181/api/candidate';
 
   constructor(private http: HttpClient) { }
 
-  getSkill(id: number): Observable<any> {
+  getCandidate(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`, httpOptions);
   }
 
-  createSkill(skill: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, skill, httpOptions);
+  createCandidate(candidate: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}`, candidate, httpOptions);
   }
 
-  updateSkill(id: number, value: any): Observable<Object> {
+  updateCandidate(id: number, value: any): Observable<Object> {
     return this.http.put(`${this.baseUrl}/${id}`, value, httpOptions);
   }
 
-  deleteSkill(id: number): Observable<any> {
+  deleteCandidate(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`, httpOptions);
   }
 
-  getSkillList(): Observable<any> {
+  getCandidateList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`, httpOptions)
   }
 }
