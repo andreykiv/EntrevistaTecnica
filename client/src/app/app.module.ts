@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,11 +20,13 @@ import { ForgotComponent } from './Login/forgot/forgot.component';
 import { RegisterComponent } from './Login/register/register.component';
 import { HomeComponent } from './Home/home/home.component';
 import { ListAppliedJobComponent } from './Job/list-applied-job/list-applied-job.component';
-import { DeleteModalComponent } from './Home/delete-modal/delete-modal.component';
-import { CreateSkillComponent } from './Modal/create-skill/create-skill.component';
 import { CreateJobComponent } from './Modal/create-job/create-job.component';
 import { DeleteJobModalComponent } from './Modal/delete-job-modal/delete-job-modal.component';
 import { DeleteCandidateModalComponent } from './Modal/delete-candidate-modal/delete-candidate-modal.component';
+import { UpdateSkillComponent } from './Skill/update-skill/update-skill.component';
+import { DeleteModalComponent } from './Modal/delete-modal/delete-modal.component';
+import { CreateSkillComponent } from './Skill/create-skill/create-skill.component';
+
 
 @NgModule({
   declarations: [
@@ -40,15 +45,18 @@ import { DeleteCandidateModalComponent } from './Modal/delete-candidate-modal/de
     RegisterComponent,
     HomeComponent,
     ListAppliedJobComponent,
-    DeleteModalComponent,
-    CreateSkillComponent,
     CreateJobComponent,
     DeleteJobModalComponent,
     DeleteCandidateModalComponent,
+    UpdateSkillComponent,
+    DeleteModalComponent,
+    CreateSkillComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,      //necesario para conectar con API
+    HttpClientModule  //necesario para conectar con API
   ],
   providers: [],
   bootstrap: [AppComponent]

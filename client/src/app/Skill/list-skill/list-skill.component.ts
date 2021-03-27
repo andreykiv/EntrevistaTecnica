@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Skill } from '../../Models/skill';
+import { SkillService } from '../../Service/skill.service'
 
 @Component({
   selector: 'app-list-skill',
@@ -6,10 +10,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-skill.component.css']
 })
 export class ListSkillComponent implements OnInit {
+  skills: Observable<Skill[]> | undefined
 
-  constructor() { }
+  constructor(private skillService: SkillService,
+    private router: Router) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.reloadData();
+  }
+
+  reloadData() {
+    this.skills = this.skillService.getSkillList();
+  }
+
+  deleteSkill(id: number) {
+    this.skillService.deleteSkill(id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.reloadData();
+        },
+        error => console.log(error));
+  }
+
+  skillDetails(id: number){
+    this.router.navigate(['details', id]);
+  }
+
+  updateSkill(id: number){
+    this.router.navigate(['skill/update', id]);
   }
 
 }
