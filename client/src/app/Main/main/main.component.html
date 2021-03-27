@@ -102,14 +102,14 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <table class="table table-bordered" id="table" data-ajax="ajaxRequest" data-search="true">
                             <thead>
                                 <tr >
                                     <th>Nombre Completo</th>
                                     <th>Título Oferta</th>
                                     <th>Fecha Inscripción</th>
                                     <th>Fecha Entrevista</th>
-                                    <th>Acciones</th>
+                                    <th>+ Info</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -118,7 +118,7 @@
                                   <th>Título Oferta</th>
                                   <th>Fecha Inscripción</th>
                                   <th>Fecha Entrevista</th>
-                                  <th>Acciones</th>
+                                  <th>+ Info</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -127,7 +127,7 @@
                                     <td>{{candidateposition.position.title}}</td>
                                     <td>{{candidateposition.position.dateCreation | date:"HH:mm dd/MM/yy":'UTC'}}</td>
                                     <td>{{candidateposition.testDate | date:"HH:mm dd/MM/yy":'UTC'}}</td>
-                                    <td class="d-flex justify-content-center">
+                                    <td class="d-flex justify-content-around">
                                       <button title="+ Info" (click)="candidatepositionDetails(candidateposition.id)" class="btn btn-primary">
                                         <i class="fas fa-info"></i>
                                       </button>

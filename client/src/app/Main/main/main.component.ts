@@ -7,6 +7,7 @@ import { Candidateskill } from '../../Models/candidateskill'
 import { CandidateskillService } from '../../Service/candidateskill.service';
 
 
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
