@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { of } from 'rxjs';
+import { count } from 'rxjs/operators';
 
 
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJleHBlcnQiLCJleHAiOjE2MTY4NzEyMDJ9.2-uQX1ZZQBw9tI6enEFm5fdm_tQcbJ3KR0aePosD_LePauyEMPFtQkswC-StiD0ZeZaa60HfEEYJVaLi7i5t6Q',
+    Authorization: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJleHBlcnQiLCJleHAiOjE2MTY4Nzg3MDh9.98nbF4qWktqkXsFp-e41k4sf-M7W5-MBDt-QLiKu9mKNek-uXKZXR0tA8xR9eCc-7qmWntVwm6z5yCAsAH4eDg',
     "Access-Control-Allow-Origin": "*",
     responseType: 'text'
   })
@@ -39,5 +41,19 @@ export class CandidateskillService {
 
   getCandidateskillList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`, httpOptions)
+  }
+
+  getCandidateskillListCount(): Observable<any> {
+     let myJSON = this.http.get(`${this.baseUrl}`, httpOptions)
+     let allnums = of(myJSON);
+    //  let final_val = allnums.pipe(count(function() {
+    //    return true;
+    //  }));
+    //  myJSON.subscribe(c => {
+    //    let myArr = c;
+    //     console.log(c)});
+      console.log(myJSON)
+    return myJSON;
+    // let numberOfItems = myJSON.count(function() { return true; });
   }
 }

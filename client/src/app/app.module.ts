@@ -27,6 +27,7 @@ import { DeleteModalComponent } from './Modal/delete-modal/delete-modal.componen
 import { CreateSkillComponent } from './Skill/create-skill/create-skill.component';
 import { UpdateJobComponent } from './Job/update-job/update-job.component';
 import { DetailsJobComponent } from './Job/details-job/details-job.component';
+import { DetailsCandidatePositionComponent } from './Candidate/details-candidate-position/details-candidate-position.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { DetailsJobComponent } from './Job/details-job/details-job.component';
     DeleteModalComponent,
     CreateSkillComponent,
     UpdateJobComponent,
-    DetailsJobComponent
+    DetailsJobComponent,
+    DetailsCandidatePositionComponent
   ],
   imports: [
     BrowserModule,

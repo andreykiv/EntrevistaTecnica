@@ -10,7 +10,7 @@ import { SkillService } from '../../Service/skill.service'
   styleUrls: ['./list-skill.component.css']
 })
 export class ListSkillComponent implements OnInit {
-  skills: Observable<Skill[]> | undefined
+  skills!: Observable<Skill[]>
 
   constructor(private skillService: SkillService,
     private router: Router) {}
