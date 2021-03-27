@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
@@ -15,29 +15,29 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class CandidatepositionService {
+export class CandidateskillService {
 
-  private baseUrl = 'http://localhost:8181/api/candidatePosition';
+  private baseUrl = 'http://localhost:8181/api/candidateSkill';
 
   constructor(private http: HttpClient) { }
 
-  getCandidateposition(id: number): Observable<any> {
+  getCandidateskill(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`, httpOptions);
   }
 
-  createCandidateposition(candidateposition: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, candidateposition, httpOptions);
+  createCandidateskill(candidateskill: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}`, candidateskill, httpOptions);
   }
 
-  updateCandidateposition(id: number, value: any): Observable<Object> {
+  updateCandidateskill(id: number, value: any): Observable<Object> {
     return this.http.put(`${this.baseUrl}/${id}`, value, httpOptions);
   }
 
-  deleteCandidateposition(id: number): Observable<any> {
+  deleteCandidateskill(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`, httpOptions);
   }
 
-  getCandidatepositionList(): Observable<any> {
+  getCandidateskillList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`, httpOptions)
   }
 }
