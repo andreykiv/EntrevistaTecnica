@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJleHBlcnQiLCJleHAiOjE2MTY4ODc0NDN9.tHUQvGfieu0Bgl5V_rZplKmWLSAA0m337xm5d4txuvSsdfQouND1P8Vk36Uiwg4dkedlxRfEY8u8ZdbyTLCNBg',
+    Authorization: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJleHBlcnQiLCJleHAiOjE2MTY5MjUzMTh9.YFN6TqvUhFSWLtH8GBV326heLhfj2y8B_aX_tyHTenQPrUoMnr9bQoD3rw0Hzm_8MSpG0TAp2sb5ctVNI_CgxA',
     "Access-Control-Allow-Origin": "*",
     responseType: 'text'
   })

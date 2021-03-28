@@ -12,22 +12,58 @@
                               <div class="text-center">
                                   <h1 class="h4 text-gray-900 mb-4">¡Bienvenido!</h1>
                               </div>
-                              <form  class="user">
+                              <form
+                                *ngIf="!isLoggedIn"
+                                name="form"
+                                (ngSubmit)="f.form.valid && onSubmit()"
+                                class="user"
+                                #f="ngForm"
+                                novalidate>
                                   <div class="form-group">
-                                      <input type="email" class="form-control form-control-user"
-                                          id="InputEmail" aria-describedby="emailHelp"
-                                          placeholder="Introduce tu correo...">
+                                      <input
+                                      name="username"
+                                      type="email"
+                                      class="form-control form-control-user"
+                                      [(ngModel)]="form.username"
+                                      required
+                                      #username="ngModel"
+                                      placeholder="Introduce tu correo...">
                                   </div>
+
+                                  <div
+                                  class="alert alert-danger"
+                                  role="alert"
+                                  *ngIf="f.submitted && username.invalid"
+                                  >
+                                  Se require correo electrónico
+                                  </div>
+
                                   <div class="form-group">
-                                      <input type="password" class="form-control form-control-user"
-                                          id="InputPassword" placeholder="Contraseña...">
+                                      <input
+                                      type="password"
+                                      name="password"
+                                      class="form-control form-control-user"
+                                      required
+                                      [(ngModel)]="form.password"
+                                      #password="ngModel"
+                                      placeholder="Contraseña...">
                                   </div>
-                                  <div class="form-group">
+
+                                  <div
+                                    class="alert alert-danger"
+                                    role="alert"
+                                    *ngIf="f.submitted && password.invalid"
+                                  >
+                                    <div *ngIf="password.errors">Introduce tu contraseña</div>
                                   </div>
-                                  <a href="home" class="btn btn-primary btn-user btn-block">
+                                  <button type="submit" class="btn btn-primary btn-user btn-block">
                                       Login
-                                  </a>
-                              </form>
+                                  </button>
+                                </form>
+
+                              <div class="alert alert-success p-2" *ngIf="isLoggedIn">
+                                Sesión iniciada!
+                              </div>
                               <hr>
                               <div class="text-center">
                                   <a class="small" href="forgot">Recuperar contraseña</a>

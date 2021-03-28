@@ -33,6 +33,7 @@ const routes: Routes = [
   {path: 'job/details/:id', component:DetailsJobComponent},
   {path: 'job/list-applied-job', component:ListAppliedJobComponent},
   {path: '', pathMatch: 'full', redirectTo: 'login'},
+  {path: '**', pathMatch:'full', redirectTo: '404'}
 ];
 
 @NgModule({
