@@ -28,6 +28,7 @@ import { UpdateJobComponent } from './Job/update-job/update-job.component';
 import { DetailsJobComponent } from './Job/details-job/details-job.component';
 import { DetailsCandidatePositionComponent } from './Candidate/details-candidate-position/details-candidate-position.component';
 
+import { authInterceptorProviders } from '../app/_helpers/auth.interceptor'
 
 @NgModule({
   declarations: [
@@ -62,7 +63,7 @@ import { DetailsCandidatePositionComponent } from './Candidate/details-candidate
     HttpClientModule,  //necesario para conectar con API
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

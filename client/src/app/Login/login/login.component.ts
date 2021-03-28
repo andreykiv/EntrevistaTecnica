@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("hi from submit!")
       this.authService.login(this.form)
       .subscribe(data =>{
         this.tokenStorageService.saveToken(data.headers.get('Authorization'));
@@ -38,7 +37,7 @@ export class LoginComponent implements OnInit {
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.router.navigate(['/main']);
+        this.router.navigate(['/home']);
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;

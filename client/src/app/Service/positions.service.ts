@@ -3,15 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJleHBlcnQiLCJleHAiOjE2MTY5MjUzMTh9.YFN6TqvUhFSWLtH8GBV326heLhfj2y8B_aX_tyHTenQPrUoMnr9bQoD3rw0Hzm_8MSpG0TAp2sb5ctVNI_CgxA',
-    "Access-Control-Allow-Origin": "*",
-    responseType: 'text'
-  })
-};
-
 @Injectable({
   providedIn: 'root'
 })
@@ -22,22 +13,22 @@ export class PositionsService {
   constructor(private http: HttpClient) { }
 
   getPositions(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`, httpOptions);
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 
   createPositions(positions: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, positions, httpOptions);
+    return this.http.post(`${this.baseUrl}`, positions);
   }
 
   updatePositions(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value, httpOptions);
+    return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 
   deletePositions(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, httpOptions);
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
   getPositionsList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`, httpOptions)
+    return this.http.get(`${this.baseUrl}`)
   }
 }

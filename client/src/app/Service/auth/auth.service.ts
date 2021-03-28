@@ -7,6 +7,11 @@ import { TokenStorageService } from '../auth/token-storage.service'
 
 const AUTH_API = 'http://localhost:8181/';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*"}),
+  observe: 'response'
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,10 +20,13 @@ export class AuthService {
   constructor(private http: HttpClient, private tokenStorageService: TokenStorageService) { }
 
   login(credentials: any): Observable<any>{
-    return this.http.post<Candidate>(AUTH_API + 'login', {
+    return this.http.post(AUTH_API + 'login', {
       name: credentials.username,
       password: credentials.password
-    }, {headers: new HttpHeaders({"Content-Type": "application/json", "Access-Control-Allow-Origin": "*",}), observe: 'response'}).pipe(map(data => data));
+    }, {headers: new HttpHeaders({'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": '*',
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Expose-Headers': 'Authorization'}), observe: 'response'}).pipe(map(data => data));
   }
 
   register(username: String, password: String): Observable<any> {

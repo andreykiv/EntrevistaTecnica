@@ -1,18 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
-import { count } from 'rxjs/operators';
 
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJleHBlcnQiLCJleHAiOjE2MTY5MjUzMTh9.YFN6TqvUhFSWLtH8GBV326heLhfj2y8B_aX_tyHTenQPrUoMnr9bQoD3rw0Hzm_8MSpG0TAp2sb5ctVNI_CgxA',
-    "Access-Control-Allow-Origin": "*",
-    responseType: 'text'
-  })
-};
 
 @Injectable({
   providedIn: 'root'
@@ -24,27 +15,27 @@ export class CandidateskillService {
   constructor(private http: HttpClient) { }
 
   getCandidateskill(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`, httpOptions);
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 
   createCandidateskill(candidateskill: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, candidateskill, httpOptions);
+    return this.http.post(`${this.baseUrl}`, candidateskill);
   }
 
   updateCandidateskill(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value, httpOptions);
+    return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 
   deleteCandidateskill(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, httpOptions);
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
   getCandidateskillList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`, httpOptions)
+    return this.http.get(`${this.baseUrl}`)
   }
 
   getCandidateskillListCount(): Observable<any> {
-     let myJSON = this.http.get(`${this.baseUrl}`, httpOptions)
+     let myJSON = this.http.get(`${this.baseUrl}`)
      let allnums = of(myJSON);
     //  let final_val = allnums.pipe(count(function() {
     //    return true;
