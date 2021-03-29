@@ -42,4 +42,10 @@ export class ListJobComponent implements OnInit {
     this.router.navigate(['job/update', id]);
   }
 
+  //valor random entre 5 y 25
+  getNumCandidates(): number{
+    let numCand = Math.floor((Math.random() * 20 + 5));
+    return numCand;
+  }
+
 }
