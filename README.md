@@ -4,9 +4,9 @@
 
 | Developer | Rama | Rol |
 | --- | :---:  | :---:  |
-| Myroslav Andreykiv | Master / Dev1 | Developer | 
-| Gerard Bonet | Dev 2 | Developer |
-| Noelia Barrera | Dev 3 | Developer | 
+| Myroslav Andreykiv | Master  | Developer | 
+| Gerard Bonet | Master  | Developer |
+| Noelia Barrera | Master  | Developer | 
 
 #### 2. Descripción
  
