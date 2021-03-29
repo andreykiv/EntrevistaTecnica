@@ -14,7 +14,9 @@ import { PositionsService } from '../../Service/positions.service';
 export class HomeComponent implements OnInit {
   positions!: Observable<Positions[]>
 
-  constructor(private positionsService: PositionsService,
+  totalOffers!: number;
+
+  constructor(private positionsService: PositionsService, private positionService: PositionsService,
     private router: Router) {}
 
   ngOnInit() {
@@ -23,11 +25,21 @@ export class HomeComponent implements OnInit {
 
   reloadData() {
     this.positions = this.positionsService.getPositionsList();
+    this.getTotalPositionsNum();
   }
 
   positionsDetails(id: number){
     this.router.navigate(['job/details', id]);
   }
+
+    //obtenemos el número total de offers
+    getTotalPositionsNum(){
+      this.positionService.getAllPositionsNum().subscribe(
+       (data: number) => {
+        this.totalOffers = data;
+       }
+     )
+    }
 
 }
 
