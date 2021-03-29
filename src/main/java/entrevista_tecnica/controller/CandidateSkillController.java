@@ -71,4 +71,9 @@ public class CandidateSkillController {
 	public void eliminarCandidateSkill(@PathVariable(name="id")int id) {
 		candidateSkillServiceImpl.eliminarCandidateSkill(id);
 	}
+	
+	@GetMapping("/candidateSkill/all")
+	public int totalCandidateSkill() {
+		return candidateSkillServiceImpl.totalCandidateSkill();
+	}
 }

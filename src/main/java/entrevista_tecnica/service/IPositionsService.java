@@ -16,4 +16,6 @@ public interface IPositionsService {
 	public Positions actualizarPositions(Positions positions); //Actualiza datos del Positions UPDATE
 	
 	public void eliminarPositions(int id);// Elimina el Positions DELETE
+	
+	public int totalPositions(); //Listar All
 }

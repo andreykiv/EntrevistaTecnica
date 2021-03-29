@@ -15,4 +15,6 @@ public interface ICandidateService {
 	public Candidate actualizarCandidate(Candidate candidate); //Actualiza datos del Candidate UPDATE
 	
 	public void eliminarCandidate(int id);// Elimina el Candidate DELETE
+	
+	public int totalCandidates(); //Obtener el num de candidatos registrados
 }

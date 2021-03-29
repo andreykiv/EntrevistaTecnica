@@ -42,7 +42,7 @@
                               <tr *ngFor="let position of positions | async">
                                   <td>{{position.title}}</td>
                                   <td>{{position.description}}</td>
-                                  <td>{{position.dateCreation | date:"HH:mm dd/MM/yy":'UTC'}}</td>
+                                  <td>{{position.dateCreation | date:"HH:mm dd/MM/yy":'UTC+1'}}</td>
                                   <td>{{getNumCandidates()}}</td>
                                   <td class="d-flex justify-content-between">
                                       <button title="Registrar nueva oferta" routerLink="add" class="btn btn-success">

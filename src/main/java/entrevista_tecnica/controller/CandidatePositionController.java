@@ -73,4 +73,9 @@ public class CandidatePositionController {
 	public void eliminarCandidatePosition(@PathVariable(name="id")int id) {
 		candidatePositionServiceImpl.eliminarCandidatePosition(id);
 	}
+	
+	@GetMapping("/candidatePosition/all")
+	public int totalCandidatePosition() {
+		return candidatePositionServiceImpl.totalCandidatePosition();
+	}
 }

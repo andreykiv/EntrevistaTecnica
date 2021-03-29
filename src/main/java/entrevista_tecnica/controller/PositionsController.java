@@ -70,4 +70,9 @@ public class PositionsController {
 	public void eliminarPositions(@PathVariable(name="id")int id) {
 		positionsServiceImpl.eliminarPositions(id);
 	}
+	
+	@GetMapping("/positions/all")
+	public int totalPositions(){
+		return positionsServiceImpl.totalPositions();
+	}
 }

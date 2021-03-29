@@ -31,4 +31,8 @@ export class PositionsService {
   getPositionsList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`)
   }
+
+  getAllPositionsNum(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/all`)
+  }
 }

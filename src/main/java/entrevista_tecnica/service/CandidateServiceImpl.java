@@ -37,4 +37,9 @@ public class CandidateServiceImpl implements ICandidateService{
 	public void eliminarCandidate(int id) {
 		iCandidateDAO.deleteById(id);
 	}
+	
+	@Override
+	public int totalCandidates() {
+		return iCandidateDAO.findAll().size();
+	}
 }

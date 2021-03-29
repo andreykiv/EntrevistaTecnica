@@ -5,7 +5,7 @@ import java.util.List;
 import entrevista_tecnica.dto.CandidatePosition;
 
 public interface ICandidatePositionService {
-	//Metodos del CRUD
+	//Metodos del CRUD y mas
 	public List<CandidatePosition> listarCandidatePosition(); //Listar All 
 	
 	public CandidatePosition guardarCandidatePosition(CandidatePosition candidatePosition);	//Guarda un CandidatePosition CREATE
@@ -15,4 +15,6 @@ public interface ICandidatePositionService {
 	public CandidatePosition actualizarCandidatePosition(CandidatePosition candidatePosition); //Actualiza datos del CandidatePosition UPDATE
 	
 	public void eliminarCandidatePosition(int id);// Elimina el CandidatePosition DELETE
+	
+	public int totalCandidatePosition(); //obtener num de candidatos que se han inscrito
 }

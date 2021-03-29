@@ -34,17 +34,7 @@ export class CandidateskillService {
     return this.http.get(`${this.baseUrl}`)
   }
 
-  getCandidateskillListCount(): Observable<any> {
-     let myJSON = this.http.get(`${this.baseUrl}`)
-     let allnums = of(myJSON);
-    //  let final_val = allnums.pipe(count(function() {
-    //    return true;
-    //  }));
-    //  myJSON.subscribe(c => {
-    //    let myArr = c;
-    //     console.log(c)});
-      console.log(myJSON)
-    return myJSON;
-    // let numberOfItems = myJSON.count(function() { return true; });
+  getAllCandidatesSkillNum(): Observable<any>{
+    return this.http.get(`${this.baseUrl}/all`)
   }
 }

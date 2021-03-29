@@ -31,4 +31,8 @@ export class CandidateService {
   getCandidateList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`)
   }
+
+  getAllCandidatesNum(): Observable<any>{
+    return this.http.get(`${this.baseUrl}/all`)
+  }
 }

@@ -71,4 +71,9 @@ public class CandidateController {
 	public void eliminarCandidate(@PathVariable(name="id")int id) {
 		candidateServiceImpl.eliminarCandidate(id);
 	}
+	
+	@GetMapping("/candidate/all")
+	public int totalCandidates(){
+		return candidateServiceImpl.totalCandidates();
+	}
 }

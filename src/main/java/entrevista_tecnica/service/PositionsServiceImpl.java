@@ -38,4 +38,9 @@ public class PositionsServiceImpl implements IPositionsService {
 	public void eliminarPositions(int id) {
 		iPositionsDAO.deleteById(id);
 	}
+	
+	@Override
+	public int totalPositions() {
+		return iPositionsDAO.findAll().size();
+	}
 }

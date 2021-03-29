@@ -37,4 +37,9 @@ public class CandidateSkillServiceImpl implements ICandidateSkillService{
 	public void eliminarCandidateSkill(int id) {
 		iCandidateSkillDAO.deleteById(id);
 	}
+	
+	@Override
+	public int totalCandidateSkill() {
+		return iCandidateSkillDAO.findAll().size();
+	}
 }

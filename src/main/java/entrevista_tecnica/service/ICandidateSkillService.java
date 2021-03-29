@@ -15,4 +15,6 @@ public interface ICandidateSkillService {
 	public CandidateSkill actualizarCandidateSkill(CandidateSkill candidateSkill); //Actualiza datos del CandidateSkill UPDATE
 	
 	public void eliminarCandidateSkill(int id);// Elimina el CandidateSkill DELETE
+	
+	public int totalCandidateSkill(); //obtener num de candidatos con skill 
 }

@@ -32,13 +32,8 @@ export class CandidatepositionService {
     return this.http.get(`${this.baseUrl}`)
   }
 
-  // getNumberCandidatePositionList() {
-  //   let mypromise =  this.http.get(`${this.baseUrl}`).toPromise()
-  //   mypromise.catch(val => {
-  //     let myStringify = JSON.stringify(val);
-  //     let myparsedDataLength = JSON.parse(myStringify).length;
-  //     return myparsedDataLength;
-  //   })
-  // }
+  getAllCandidatespositionNum(): Observable<any>{
+    return this.http.get(`${this.baseUrl}/all`)
+  }
 
 }
