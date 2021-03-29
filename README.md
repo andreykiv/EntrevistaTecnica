@@ -4,93 +4,97 @@
 
 | Developer | Rama | Rol |
 | --- | :---:  | :---:  |
-| Myroslav Andreykiv | Master / Dev1 | Developer | 
-| Gerard Bonet | Dev 2 | Developer |
-| Noelia Barrera | Dev 3 | Developer | 
+| Myroslav Andreykiv | Master  | Developer | 
+| Gerard Bonet | Master  | Developer |
+| Noelia Barrera | Master  | Developer | 
 
 #### 2. Descripción
-Entrevista Técnica
-En este proyecto fullStack desarrollamos una aplicación que permite registrar las entrevistas técnicas que realiza una empresa tecnológica para sus puestos de trabajo ofertados.
-
-La aplicación estará gestionada por un usuario de recursos humanos que creará las posiciones en que los candidatos podrán aplicar, también contará con una extensión de rol para el usuario llamado “experto” que será el que realizará las entrevistas técnicas.
-
-
-Comenzando 🚀
-Se puede obtener el proyecto clonando de este repositorio de github a la Spring Tool Suite 
-https://github.com/andreykiv/EntrevistaTecnica.git.
+ 
+### Entrevista Técnica
+```
+Proyecto final para el curso de Fullstack con Java, Angular y MySQL.En este proyecto  desarrollamos una aplicación can las que permite registrar las entrevistas técnicas que realiza una empresa tecnológica para sus puestos de trabajo ofertados.
+```
 
 
-Pre-requisitos 📋
+### Enunciado
+``` 
+A T-Systems volem crear un sistema de registre de les entrevistes tècniques que realitzem quan
+contractem candidats.
+El rol dels usuaris de Recursos Humans és el de crear posicions a les quals els candidats s’hi
+poden apuntar. Posteriorment, aquests candidats realitzen una prova tècnica i el seu resultat
+s’emmagatzema, juntament amb la data de realització de la mateixa.
+Finalment, es realitza una entrevista tècnica en la qual es puntuen diferents habilitats dels
+candidats. (Per simplicitat per l’objectiu d’aquesta pràctica, aquesta tasca la poden fer els
+mateixos usuaris de Recursos Humans)
+```
+***Requisitos***
+
+![image](https://user-images.githubusercontent.com/78427755/112759455-591f9900-8ff3-11eb-93c2-5e4bfea4684c.png)
 
 
-Tener instalado: 
-
-Postman
-
-Spring Tool Suite
-
-MySql en un servidor.
+#### 3.Diseño base de datos
 
 
 
-Ejecutando el programa ⚙️
+![image](https://user-images.githubusercontent.com/78427755/112759903-6178d380-8ff5-11eb-86c9-137d009993ff.png)
+
+
+
+
+MODELO RELACIONAL
+```
+SKILL(Id(PK), skillName)
+CANDIDATE_SKILL(Id(PK), IdCandidate(FK), IdSkill( FK), notes, skillValue) 
+CANDIDATE(Id(PK), username, pwd, nameCandidate, surname) 
+CANDIDATE_POSITION(Id(PK), IdCandidate(FK),IdPosition(FK), registryDate, testDate, completionDate, result)
+POSITIONS(Id(PK), title, dateCreation, descriptionPosition) 
+COMPANY_USER(Id(PK), username, pwd, userRole)
+```
+
+
+
+#### 4.EndPoints
+```
 Utilizar los siguientes endPoints para realizar las consultas y modificaciones  sobre la base de datos :
-
-
-End-points🔩
+```
 Api:
+```
 @RequestMapping("/api")
-
+```
 Listar i crear id según la entidad(si queremos listar sólo un registro /{id}):
-
+```
 @GetMapping("/candidate")
 @GetMapping("/candidatePosition")
 @GetMapping("/candidateSkill")
 @GetMapping("/companyUser")
 @GetMapping("/positions")
 @GetMapping("/skill")
-
+```
 Guardar y actualizar según la entidad(si queremos guardar o actualizar sólo un registro /{id}):
+```
 @PostMapping("/candidate")
 @PostMapping("/candidatePosition")
 @PostMapping("/candidateSkill")
 @PostMapping("/companyUser")
 @PostMapping("/skill")
 @PostMapping("/positions")
-
+```
 
 Eliminar un registro de la entidad:
+```
 @DeleteMapping("/candidate/{id}")
 @DeleteMapping("/candidatePosition/{id}")
 @DeleteMapping("/candidateSkill/{id}")
 @DeleteMapping("/companyUser/{id}")
 @DeleteMapping("/skill/{id}")
 @DeleteMapping("/positions/{id}")
-
-Construido con 🛠️
-Menciona las herramientas que utilizaste para crear tu proyecto
-Spring Tool Suite
+```
 
 
-Autores ✒️
-Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios:
-Noelia Barrera
-Miroslav Andreykiv
-Gerard Bonet
 
-Licencia 📄
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo LICENSE.md para detalles
+#### 5. Link a un demo con el proyecto desplegado: https://github.com/andreykiv/EntrevistaTecnica
 
 
-Expresiones de Gratitud 🎁
-Google
-Mi familia 
-Aragon en el retorno del rey por llegar con los espíritus en barco.
-
-#### 3. Link a un demo con el proyecto desplegado: https://github.com/andreykiv/EntrevistaTecnica
-
-
-#### 4. Lista con los pasos mínimos que se necesitan para clonar exitosamente el proyecto y echarlo a andar en local.
 
 
 
