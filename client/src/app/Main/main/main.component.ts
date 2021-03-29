@@ -18,6 +18,7 @@ export class MainComponent implements OnInit {
   candidateposition!: Observable<Candidateposition[]>
   candidateskill!: Observable<Candidateskill[]>
 
+  totalCandidates!:  number;
   constructor(private candidatepositionService: CandidatepositionService, private candidateskillService: CandidateskillService,
     private router: Router) {}
 

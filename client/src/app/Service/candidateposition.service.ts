@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -31,4 +31,14 @@ export class CandidatepositionService {
   getCandidatepositionList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`)
   }
+
+  // getNumberCandidatePositionList() {
+  //   let mypromise =  this.http.get(`${this.baseUrl}`).toPromise()
+  //   mypromise.catch(val => {
+  //     let myStringify = JSON.stringify(val);
+  //     let myparsedDataLength = JSON.parse(myStringify).length;
+  //     return myparsedDataLength;
+  //   })
+  // }
+
 }

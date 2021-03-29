@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -61,7 +61,6 @@ import { authInterceptorProviders } from '../app/_helpers/auth.interceptor'
     AppRoutingModule,
     FormsModule,      //necesario para conectar con API
     HttpClientModule,  //necesario para conectar con API
-    ReactiveFormsModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
