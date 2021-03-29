@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CandidateComponent } from './Candidate/candidate/candidate.component';
 import { DetailsCandidatePositionComponent } from './Candidate/details-candidate-position/details-candidate-position.component';
 import { HomeComponent } from './Home/home/home.component';
+import { NotFoundComponent } from './Home/not-found/not-found.component';
 import { CreateJobComponent } from './Job/create-job/create-job.component';
 import { DetailsJobComponent } from './Job/details-job/details-job.component';
 import { ListAppliedJobComponent } from './Job/list-applied-job/list-applied-job.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'job/update/:id', component: UpdateJobComponent},
   {path: 'job/details/:id', component:DetailsJobComponent},
   {path: 'job/list-applied-job', component:ListAppliedJobComponent},
+  {path: '404', component:NotFoundComponent},
   {path: '', pathMatch: 'full', redirectTo: 'login'},
   {path: '**', pathMatch:'full', redirectTo: '404'}
 ];
