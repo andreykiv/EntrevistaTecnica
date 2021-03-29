@@ -36,5 +36,22 @@ export class ListSkillComponent implements OnInit {
   updateSkill(id: number){
     this.router.navigate(['skill/update', id]);
   }
+  //nota media random entre 5 y 8
+  getAverage(): number{
+    let nota = parseFloat((Math.random() * 3 + 5).toFixed(2));
+    return nota;
+  }
+
+  //nota media random entre 8 y 10
+  getBest(): number{
+    let nota = parseFloat((Math.random() * 2 + 8).toFixed(2));
+    return nota;
+  }
+
+  //valor random entre 5 y 25
+  getNumCandidates(): number{
+    let numCand = Math.floor((Math.random() * 20 + 5));
+    return numCand;
+  }
 
 }

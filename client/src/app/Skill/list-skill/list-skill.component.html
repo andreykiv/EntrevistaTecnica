@@ -24,8 +24,8 @@
                             <tr>
                                 <th>Nombre Habilidad</th>
                                 <th>Candidatos con la Habilidad</th>
-                                <th>Nota Media</th>
-                                <th>Mejor nota candidato</th>
+                                <th>Puntuación Media</th>
+                                <th>Mejor puntuación</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -33,17 +33,17 @@
                             <tr>
                               <th>Nombre Habilidad</th>
                               <th>Candidatos con la Habilidad</th>
-                              <th>Nota Media</th>
-                              <th>Mejor nota candidato</th>
+                              <th>Puntuación Media</th>
+                              <th>Mejor puntuación</th>
                               <th>Acciones</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             <tr *ngFor="let skill of skills | async">
                                 <td>{{skill.skillName}}</td>
-                                <td>{{skill.id}}</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
+                                <td>{{getNumCandidates()}}</td>
+                                <td>{{getAverage()}}</td>
+                                <td>{{getBest()}}</td>
                                 <td class="d-flex justify-content-between">
                                     <button title="Crear nueva habilidad" routerLink="add" class="btn btn-success">
                                       <i class="fas fa-plus"></i>

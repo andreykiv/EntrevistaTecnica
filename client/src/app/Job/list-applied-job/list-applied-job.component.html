@@ -22,7 +22,7 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                       <tr>
-                          <th>Título</th>
+                          <th>Título oferta</th>
                           <th>Fecha Inscripción</th>
                           <th>Fecha Entrevista</th>
                           <th>Nota Test</th>
@@ -31,7 +31,7 @@
                       </thead>
                       <tfoot>
                           <tr>
-                            <th>Título</th>
+                            <th>Título oferta</th>
                             <th>Fecha Inscripción</th>
                             <th>Fecha Entrevista</th>
                             <th>Nota Test</th>
@@ -39,11 +39,11 @@
                           </tr>
                       </tfoot>
                       <tbody>
-                          <tr *ngFor="let position of positions | async">
-                              <td>{{position.title}}</td>
-                              <td>{{position.dateCreation | date:"HH:mm dd/MM/yy":'EST'}}</td>
-                              <td>{{position.dateCreation | date:"HH:mm dd/MM/yy":'GMT'}}</td>
-                              <td>{{getNota()}}</td>
+                          <tr *ngFor="let candidateposition of candidatePosition | async">
+                              <td>{{candidateposition.position.title}}</td>
+                              <td>{{candidateposition.registryDate| date:"HH:mm dd/MM/yy":'EST'}}</td>
+                              <td>{{candidateposition.testDate| date:"HH:mm dd/MM/yy":'GMT'}}</td>
+                              <td>{{candidateposition.result}}</td>
                               <td class="d-flex justify-content-around">
                                   <button title="Hacer test" class="btn btn-warning">
                                     <i class="fas fa-pencil-alt"></i>

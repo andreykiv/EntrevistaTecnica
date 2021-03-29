@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Positions } from '../../Models/positions';
 import { PositionsService } from '../../Service/positions.service'
+import { CandidatepositionService } from '../../Service/candidateposition.service'
+import { Candidateposition } from 'src/app/Models/candidateposition';
 
 @Component({
   selector: 'app-list-applied-job',
@@ -12,8 +14,9 @@ import { PositionsService } from '../../Service/positions.service'
 
 export class ListAppliedJobComponent implements OnInit {
   positions: Observable<Positions[]> | undefined
+  candidatePosition: Observable<Candidateposition[]> | undefined
 
-  constructor(private positionsService: PositionsService,
+  constructor(private positionsService: PositionsService, private candidatepositionservice: CandidatepositionService,
     private router: Router) {}
 
   ngOnInit() {
@@ -22,6 +25,7 @@ export class ListAppliedJobComponent implements OnInit {
 
   reloadData() {
     this.positions = this.positionsService.getPositionsList();
+    this.candidatePosition = this.candidatepositionservice.getCandidatepositionList();
   }
 
   deletePositions(id: number) {
