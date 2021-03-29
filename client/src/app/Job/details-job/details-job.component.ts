@@ -31,6 +31,6 @@ export class DetailsJobComponent implements OnInit {
   }
 
   list(){
-    this.router.navigate(['job/list-job']);
+    this.router.navigate(['main']);
   }
 }
