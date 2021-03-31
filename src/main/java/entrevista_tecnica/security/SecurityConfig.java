@@ -18,15 +18,14 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
+		
         http.cors().and().csrf().disable().authorizeRequests()
-            .antMatchers("/login").permitAll() //permitimos el acceso a /login a cualquiera
+            .antMatchers("/login", "/api/candidate/username/{username}", "/api/candidate" ).permitAll() //permitimos el acceso a /login a cualquiera
             .anyRequest().authenticated() //cualquier otra peticion requiere autenticacion
             .and()
             // Las peticiones /login pasaran previamente por este filtro
             .addFilterBefore(new LoginFilter("/login", authenticationManager()),
                     UsernamePasswordAuthenticationFilter.class)
-
-            // Las demás peticiones pasarán por este filtro para validar el token
             .addFilterBefore(new JwtFilter(),
                     UsernamePasswordAuthenticationFilter.class);
     }

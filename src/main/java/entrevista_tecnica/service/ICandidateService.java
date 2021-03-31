@@ -17,4 +17,6 @@ public interface ICandidateService {
 	public void eliminarCandidate(int id);// Elimina el Candidate DELETE
 	
 	public int totalCandidates(); //Obtener el num de candidatos registrados
+	
+	public List<Candidate> candidateXusername(String username);
 }

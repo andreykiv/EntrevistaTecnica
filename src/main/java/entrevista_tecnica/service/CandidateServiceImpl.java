@@ -42,4 +42,9 @@ public class CandidateServiceImpl implements ICandidateService{
 	public int totalCandidates() {
 		return iCandidateDAO.findAll().size();
 	}
+	
+	@Override
+	public List<Candidate> candidateXusername(String username) {
+		return iCandidateDAO.findByusername(username);
+	}
 }

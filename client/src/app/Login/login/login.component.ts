@@ -29,27 +29,39 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-      this.authService.login(this.form)
-      .subscribe(data =>{
-        this.tokenStorageService.saveToken(data.headers.get('Authorization'));
-        // this.tokenStorageService.saveUser(data);
+      //comprobamos si existe el usuario y si sus credenciales son las correctas
+      this.authService.getCurrentUser(this.form.username).
+      subscribe(data => {
+        let password = data[0].pwd;
+        //comprobamos si el pwd es el mismo que ha introducido el usuario que se quiete autentificar
+        if(password != this.form.password){
+          console.log("Contraseña no valida")
+        } else {
+          this.tokenStorageService.saveUser(this.form.username)
+          this.authService.login(this.form)
+          .subscribe(data =>{
+            this.tokenStorageService.saveToken(data.headers.get('Authorization'));
+            // this.tokenStorageService.saveUser(data);
 
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.isWrongDataAccess = false;
+            this.isLoginFailed = false;
+            this.isLoggedIn = true;
+            this.isWrongDataAccess = false;
 
-        this.reloadPage();
+            this.reloadPage();
 
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-      },
-      err =>{
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
-        this.isWrongDataAccess = true;
+            this.isLoginFailed = false;
+            this.isLoggedIn = true;
+          },
+          err =>{
+            this.errorMessage = err.error.message;
+            this.isLoginFailed = true;
+            this.isWrongDataAccess = true;
+            }
+          );
         }
-      );
-    }
+      })
+  }
+
   reloadPage() {
     window.location.reload();
   }

@@ -47,6 +47,12 @@ public class CandidateController {
 		return Candidate_xid;
 	}
 	
+	@GetMapping("/candidate/username/{username}")
+	public List<Candidate> candidateXusername(@PathVariable(name="username") String username) {
+		
+		return candidateServiceImpl.candidateXusername(username);
+	}
+	
 	@PutMapping("/candidate/{id}")
 	public Candidate actualizarCandidate(@PathVariable(name="id")int id,@RequestBody Candidate candidate) {
 		
